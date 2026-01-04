@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Wedding Gallery | Eventify</title>
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --gold:#d4af37;
+  --dark:#0f0f0f;
+  --light:#f6f6f6;
+}
+
+*{margin:0;padding:0;box-sizing:border-box}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:var(--light);
+  color:#222;
+}
+
+/* ===================== GALLERY ===================== */
+.gallery-container{
+  max-width:1400px;
+  margin:auto;
+  padding:90px 30px;
+}
+
+.gallery-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+.gallery-title h1{
+  font-size:3rem;
+  font-weight:700;
+}
+.gallery-title p{
+  color:#666;
+}
+
+.gallery-grid{
+  column-count:3;
+  column-gap:25px;
+}
+@media(max-width:992px){.gallery-grid{column-count:2}}
+@media(max-width:576px){.gallery-grid{column-count:1}}
+
+.gallery-item{
+  position:relative;
+  margin-bottom:25px;
+  border-radius:18px;
+  overflow:hidden;
+  break-inside:avoid;
+  box-shadow:0 20px 40px rgba(0,0,0,0.25);
+  animation:fadeUp .8s ease both;
+}
+
+.gallery-item img{
+  width:100%;
+  display:block;
+  transition:transform .6s ease;
+}
+.gallery-item:hover img{
+  transform:scale(1.08);
+}
+
+.gallery-overlay{
+  position:absolute;
+  inset:0;
+  background:linear-gradient(to top, rgba(0,0,0,.75), transparent);
+  opacity:0;
+  transition:.4s ease;
+  display:flex;
+  align-items:flex-end;
+  padding:25px;
+}
+.gallery-item:hover .gallery-overlay{opacity:1}
+.gallery-overlay h4{
+  color:#fff;
+  font-weight:600;
+}
+
+/* ===================== BLOG ===================== */
+.blog-section{
+  background:#fff;
+  padding:100px 30px;
+}
+
+.blog-container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.blog-title{
+  text-align:center;
+  margin-bottom:60px;
+}
+.blog-title h2{
+  font-size:2.6rem;
+  font-weight:700;
+}
+.blog-title p{
+  color:#666;
+}
+
+.blog-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+  gap:30px;
+}
+
+.blog-card{
+  background:#fff;
+  border-radius:20px;
+  overflow:hidden;
+  box-shadow:0 15px 35px rgba(0,0,0,0.15);
+  transition:.4s ease;
+}
+.blog-card:hover{
+  transform:translateY(-10px);
+  box-shadow:0 25px 60px rgba(0,0,0,0.25);
+}
+
+.blog-card img{
+  width:100%;
+  height:220px;
+  object-fit:cover;
+}
+
+.blog-content{
+  padding:25px;
+}
+.blog-content span{
+  font-size:.85rem;
+  color:var(--gold);
+  font-weight:600;
+}
+.blog-content h3{
+  margin:10px 0;
+  font-size:1.25rem;
+}
+.blog-content p{
+  color:#555;
+  font-size:.95rem;
+  line-height:1.6;
+}
+
+/* ===================== FOOTER ===================== */
+footer{
+  background:var(--dark);
+  color:#aaa;
+  padding:60px 30px 30px;
+}
+
+.footer-container{
+  max-width:1200px;
+  margin:auto;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:40px;
+}
+
+.footer-container h4{
+  color:#fff;
+  margin-bottom:15px;
+}
+
+.footer-container p,
+.footer-container a{
+  font-size:.9rem;
+  color:#aaa;
+  text-decoration:none;
+}
+
+.footer-container a:hover{
+  color:var(--gold);
+}
+
+.footer-bottom{
+  text-align:center;
+  margin-top:40px;
+  font-size:.85rem;
+  border-top:1px solid rgba(255,255,255,.1);
+  padding-top:20px;
+}
+
+/* ===================== ANIMATION ===================== */
+@keyframes fadeUp{
+  from{opacity:0;transform:translateY(30px)}
+  to{opacity:1;transform:translateY(0)}
+}
+</style>
+</head>
+
+<body>
+
+<!-- ================= GALLERY ================= -->
+<section class="gallery-container">
+  <div class="gallery-title">
+    <h1>Wedding Gallery</h1>
+    <p>Timeless love stories captured beautifully</p>
+  </div>
+
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1523438885200-e635ba2c371e?q=80&w=800">
+      <div class="gallery-overlay"><h4>Royal Wedding Decor</h4></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1519741497674-611481863552?q=80&w=800">
+      <div class="gallery-overlay"><h4>Bride & Groom</h4></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1520854221256-17451cc331bf?q=80&w=800">
+      <div class="gallery-overlay"><h4>Luxury Mandap</h4></div>
+    </div>
+
+    <div class="gallery-item">
+      <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800">
+      <div class="gallery-overlay"><h4>Reception Night</h4></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= BLOG ================= -->
+<section class="blog-section">
+  <div class="blog-container">
+
+    <div class="blog-title">
+      <h2>Wedding Stories</h2>
+      <p>Moments, emotions & unforgettable experiences</p>
+    </div>
+
+    <div class="blog-grid">
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1519225421980-715cb0215aed?q=80&w=800">
+        <div class="blog-content">
+          <span>Wedding Planning</span>
+          <h3>How We Create Dream Weddings</h3>
+          <p>From concept to execution, every detail is crafted with precision to make your wedding unforgettable.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?q=80&w=800">
+        <div class="blog-content">
+          <span>Decor & Styling</span>
+          <h3>Elegant Themes That Inspire</h3>
+          <p>Discover how luxury décor and creative design elevate wedding celebrations to the next level.</p>
+        </div>
+      </div>
+
+      <div class="blog-card">
+        <img src="https://images.unsplash.com/photo-1492684223066-81342ee5ff30?q=80&w=800">
+        <div class="blog-content">
+          <span>Event Experience</span>
+          <h3>Behind the Scenes of Grand Receptions</h3>
+          <p>A glimpse into the planning, coordination, and passion that make every reception magical.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOOTER ================= -->
+<footer>
+  <div class="footer-container">
+
+    <div>
+      <h4>Eventify</h4>
+      <p>Creating timeless wedding experiences with elegance, creativity, and flawless execution.</p>
+    </div>
+
+    <div>
+      <h4>Quick Links</h4>
+      <p><a href="#">Home</a></p>
+      <p><a href="#">Gallery</a></p>
+      <p><a href="#">Blog</a></p>
+      <p><a href="#">Contact</a></p>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+      <p>Wedding Planning</p>
+      <p>Luxury Decor</p>
+      <p>Corporate Events</p>
+      <p>Concerts & Parties</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p>📍 India</p>
+      <p>📞 +91 8448610521</p>
+      <p>✉️ info@eventify.com</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © <script>document.write(new Date().getFullYear())</script> Eventify • All Rights Reserved
+  </div>
+</footer>
+
+</body>
+</html>
